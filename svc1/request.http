@@ -33,3 +33,12 @@ content-type: application/json
     "a": "1",
     "b": "2"
 }
+
+###
+POST http://vm.poridhi.io/api/svc HTTP/1.1
+content-type: application/json
+
+{
+    "a": "1",
+    "b": "2"
+}

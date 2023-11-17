@@ -1,32 +1,34 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: poridhi-svc1
+  name: poridhi-svc2
+  namespace: devops
 spec:
-  replicas: 1  # Adjust the number of replicas as needed
+  replicas: 2  # Adjust the number of replicas as needed
   selector:
     matchLabels:
-      app: poridhi-svc1
+      app: poridhi-svc2
   template:
     metadata:
       labels:
-        app: poridhi-svc1
+        app: poridhi-svc2
     spec:
       containers:
-      - name: poridhi-svc1
-        image: shajalahamedcse/poridhi-svc2:v1.0.2  # Replace with your actual Docker image
+      - name: poridhi-svc2
+        image: shajalahamedcse/poridhi-svc2:v1.0.5  # Replace with your actual Docker image
         ports:
         - containerPort: 3000  # Adjust the port if your Node.js app is running on a different port
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: poridhi-sv1-svc
+  name: poridhi-sv2-svc
+  namespace: devops
 spec:
   selector:
-    app: poridhi-svc1
+    app: poridhi-svc2
   ports:
     - protocol: TCP
       port: 80
       targetPort: 3000  # Adjust if your Node.js app is running on a different port
-  type: LoadBalancer  # Change to NodePort or ClusterIP based on your requirements
+  type: ClusterIP  # Change to NodePort or ClusterIP based on your requirements

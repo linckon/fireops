@@ -17,8 +17,9 @@ app.post('/api/svc', async (req, res) => {
     const body = req.body;
     
     try{
-        const response = await axios.post('http://vm.poridhi.io/api/hello', body);
-
+        // poridhi-sv2-svc.default.svc.cluster.local
+        const response = await axios.post('http://poridhi-sv2-svc.devops.svc.cluster.local/api/hello', body);
+        console.log(response.data); 
         res.status(200).json({ success: true, response: response.data });
     }catch (error) {
         console.error('Error sending POST request:', error.message);

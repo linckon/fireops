@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: poridhi-svc1
-        image: shajalahamedcse/poridhi-svc1:v1.0.2  # Replace with your actual Docker image
+        image: shajalahamedcse/poridhi-svc1:v1.0.6  # Replace with your actual Docker image
         ports:
         - containerPort: 3000  # Adjust the port if your Node.js app is running on a different port
 ---

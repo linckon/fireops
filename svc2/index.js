@@ -10,7 +10,10 @@ app.use(express.json());
 
 app.post('/api/hello', (req, res) => {
   const body = req.body;
-  res.json(req.body);
+  let result = Number(body.a)+Number(body.b);
+  console.log(result);
+//   res.json(req.body);
+  res.status(200).json({ success: true, response: result });
 });
 
 

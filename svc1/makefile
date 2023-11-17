@@ -1,4 +1,4 @@
-tag:=v1.0.2
+tag:=v1.0.6
 image_name:=poridhi-svc1
 respository:=shajalahamedcse
 build:
@@ -15,3 +15,6 @@ run:
 rm:
 	@ docker stop svc1
 	@ docker rm -f svc1
+
+deploy:
+	@ kubectl apply -f deployment/deployment.yml
