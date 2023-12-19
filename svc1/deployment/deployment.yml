@@ -29,4 +29,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 3000  # Adjust if your Node.js app is running on a different port
-  type: LoadBalancer  # Change to NodePort or ClusterIP based on your requirements
+  type: ClusterIP  # Change to NodePort or ClusterIP based on your requirements
