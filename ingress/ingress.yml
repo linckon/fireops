@@ -11,7 +11,10 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: poridhi-sv1-svc
+            name: poridhi-sv2-svc
             port:
               number: 80
   ingressClassName: nginx
+
+# ---
+# poridhi-sv2-svc 

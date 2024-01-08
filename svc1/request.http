@@ -42,3 +42,12 @@ content-type: application/json
     "a": "1",
     "b": "2"
 }
+
+###
+POST http://api.poridhi.io/api/hello HTTP/1.1
+content-type: application/json
+
+{
+    "a": "1",
+    "b": "2"
+}
